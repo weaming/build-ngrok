@@ -31,9 +31,9 @@ cd $root
 make release-server
 make release-client
 # build for my raspberry
-#unset GOBIN && GOOS="linux" GOARCH="arm" make release-client
+unset GOBIN && GOOS="linux" GOARCH="arm" make release-client
 
 [ -d $dist ] || mkdir $dist
 cp $root/bin/ngrok* $dist
-#cp -r $root/bin/*arm* $dist
+cp -r $root/bin/*arm* $dist
 
