@@ -15,7 +15,7 @@ elif [ "$1" = "client" ]; then
 	$CLIENT -config=ngrok-config -proto=tcp 22
 elif [ "$1" = "pi" ]; then
 	echo -e "server_addr: $DOMAIN:4443\ntrust_host_root_certs: false" > ngrok-config
-	./dist/linux-arm/ngrok -config=ngrok-config -proto=tcp 22
+	./dist/linux_arm/ngrok -config=ngrok-config -proto=tcp 22
 else
 	echo './run.sh server/client'
 fi
