@@ -3,6 +3,7 @@
 domain="ngrok.bitsflow.org"
 root="`pwd`/ngrok"
 dir="$root/certificate"
+dist="$root/../dist"
 
 # git clone
 git clone https://github.com/inconshreveable/ngrok && cd $root
@@ -29,5 +30,10 @@ cp rootCA.pem ../assets/client/tls/ngrokroot.crt
 cd $root
 make release-server
 make release-client
-unset GOBIN && GOOS="linux" GOARCH="arm" make release-client
+# build for my raspberry
+#unset GOBIN && GOOS="linux" GOARCH="arm" make release-client
+
+[ -d $dist ] || mkdir $dist
+cp $root/bin/ngrok* $dist
+#cp -r $root/bin/*arm* $dist
 
