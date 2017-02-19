@@ -23,8 +23,8 @@ openssl x509 -req -in device.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateseria
 # ngrok通过bindata将ngrok源码目录下的assets目录（资源文件）打包到可执行文件(ngrokd和ngrok)中去
 cd $dir
 cp rootCA.pem ../assets/client/tls/ngrokroot.crt
-#cp device.crt ../assets/server/tls/snakeoil.crt
-#cp device.key ../assets/server/tls/snakeoil.key
+cp device.crt ../assets/server/tls/snakeoil.crt
+cp device.key ../assets/server/tls/snakeoil.key
 
 # make
 cd $root
